@@ -1,0 +1,23 @@
+{% extends 'serial/base.html' %}
+
+{% block maincontent %}
+
+    <h1>Guitar Form</h1>
+
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="id_model" class="form-label">{{ form.model.label_tag }}</label>
+                <input name="model" required="" id="id_model" type="text" class="form-control" aria-describedby="{{ form.model.help_text }}">
+                <div id="modelHelp" class="form-text">{{ form.model.help_text }}</div>
+            </div>
+            <div class="mb-3">
+                <label for="id_serial_number" class="form-label">{{ form.serial_number.label_tag }}</label>
+                <input name="serial_number" required="" id="id_serial_number" type="text" class="form-control" aria-describedby="{{ form.model.help_text }}">
+                <div id="serialHelp" class="form-text">{{ form.serial_number.help_text }}</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            {{ form }}
+        </form>
+
+ {% endblock maincontent %}

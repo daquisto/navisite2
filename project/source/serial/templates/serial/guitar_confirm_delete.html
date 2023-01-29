@@ -1,0 +1,13 @@
+{% extends 'serial/base.html' %}
+
+{% block maincontent %}
+
+      <h3>Do you want to delete the record?</h3>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="submit" class="btn btn-primary" value="confirm" name="confirm_delete" />
+    </form>
+    <button onClick="window.location='{% url 'home' %}'" type="button" class="btn btn-primary" value="cancel" name="cancel">Cancel</button>
+
+{% endblock maincontent %}

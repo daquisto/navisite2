@@ -1,0 +1,16 @@
+{% extends 'serial/base.html' %}
+
+
+{% block maincontent %}
+    <h1>Guitar List</h1>
+        <div>
+            <ul>
+                {% for guitar in guitar_list %}
+                    <li>record number: {{ guitar.pk }} </li>
+                    <li>model: <a href="/guitar/{{ guitar.pk }}"> {{ guitar.model }}</a> </li>
+                    <li>serial: {{ guitar.serial_number }}</li>
+                    <li>current owner: {{ guitar.current_owner }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+{% endblock maincontent %}

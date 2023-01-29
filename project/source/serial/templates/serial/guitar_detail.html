@@ -1,0 +1,12 @@
+{% extends 'serial/base.html' %}
+
+{% block maincontent %}
+
+    <h1>Guitar Details</h1>
+
+    {{ guitar.model }} {{ guitar.serial_number }}<br>
+
+    <a href="/guitar/update/{{ guitar.pk }}">Update Guitar Record</a>
+    <a href="/guitar/delete/{{ guitar.pk }}">Delete Guitar Record</a>
+
+{% endblock maincontent %}
